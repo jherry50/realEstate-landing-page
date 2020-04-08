@@ -55,36 +55,15 @@ const buildLinks = () => {
 
 //style active link
 
-const selectActive = ()=> {
-  let activeLink = document.querySelector(".active-link")
-                            .getBoundingClientRect();
-   //set the left position and width of the underline to the left and width of the link
-  //  document.documentElement.style.setProperty(
-  //   "--leftPos",
-  //   `${activeLink.left}px`
-  // );
-  // document.documentElement.style.setProperty(
-  //   "--linkWidth",
-  //   `${activeLink.width}px`
-  // );
-}
-
 // Add class 'active' to section when near top of viewport
 const checkScrolling = ()=> {
   const scrollPosition = document.scrollingElement.scrollTop + 200;
-
-  //animate the gototop buttonn to hide while scrolling
-  // if (scrollPosition >= document.body.offsetHeight / 2) {
-  //   goTop.style.bottom = "3vw";
-  // } else {
-  //   goTop.style.bottom = "-5rem";
-  // }
 
   for (let section of sections){
     let id = section.id;
 
     if (scrollPosition >= mainHero.offsetHeight) {
-      //only begin if the user has scrolled passed the header
+      //only begin if user scrolled passed header
       if (section.offsetTop <= scrollPosition) {
         if (!document.querySelector(".active")) {
           sections[0].classList.add("active");
@@ -98,17 +77,22 @@ const checkScrolling = ()=> {
         document.querySelector(`#${id}`).classList.add("active");
       }
     }
-    //remove all active states when the user isn't on any section
+    //code to remove all active states when the user is not on any section
     else {
       sections[0].classList.remove("active");
       document.querySelector(".navbar__item").classList.remove("active-link");
-      document.documentElement.style.setProperty("--leftPos", "-100vw");
     }
   }
 }
 
 // Scroll to anchor ID using scrollTO event
-
+//Go to top of the page when clicked
+const scrollToTop = document.querySelector(".go__top");
+scrollToTop.addEventListener("click", () => {
+  document.querySelector("body").scrollIntoView({
+    behavior: "smooth"
+  });
+});
 
 /**
  * End Main Functions

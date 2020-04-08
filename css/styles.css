@@ -26,6 +26,12 @@ h1 {
     margin: 2em 1rem;
 }
 
+
+.page__footer div{
+    display: inline;
+    text-align: center;
+}
+
 @media only screen and (min-width: 35em){
     h1 {
         font-size: 7em;
@@ -109,16 +115,28 @@ section {
     width: 100%;
     z-index: 5;
 }
-
+.go__top{
+    display: flex;
+    justify-content:center;
+    text-align: center;
+    margin-bottom: 2em;
+    color:red;
+    cursor: pointer;
+}
 /* Footer Styles */
 .page__footer {
     background: #000;
-    padding: 3em;
+    padding: 2em;
     color: #fff;
+    display: flex;
+    justify-content: space-between;
 }
 
-.page__footer p{
-    color: #fff;
+.footer__link{
+    text-decoration: none;
+    color:whitesmoke;
+    font-weight: 500;
+    padding: 20px;
 }
 
 
@@ -206,17 +224,18 @@ section:nth-of-type(3n + 1) .landing__container::after {
 /* ---- Theme State Rules ---- */
 /* Section Active Styles */
 /* Note: your-active-class class is applied through javascript. You should update the class here and in the index.html to what you set in your javascript file.  */
-section.your-active-class {
+section.active {
     background: rgb(0, 0, 0);
-    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0) 100%);
+    background: linear-gradient(0deg, rgba(0, 0, 0, 0.1) 0%, rgba(148, 7, 7, 0.589) 100%);
+    transition: ease 0.7s all;
 }
 
-section.your-active-class .landing__container::before {
+section.active .landing__container::before {
     opacity: 1;
     animation: rotate 4s linear 0s infinite forwards;
 }
 
-section.your-active-class .landing__container::after {
+section.active .landing__container::after {
     opacity: 1;
     animation: rotate 5s linear 0s infinite forwards reverse;
 }
