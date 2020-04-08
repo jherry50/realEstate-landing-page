@@ -50,27 +50,30 @@ main {
     margin: 10vh 1em 10vh;
 }
 
-.main-hero {
-    min-height: 50vh;
+.main__hero {
+    min-height: 80vh;
     padding-top: 3em;
 }
 
 section {
     position: relative;
-    min-height: 80vh;
+    min-height: 100vh;
 }
 
 
 /* ---- Module Rules ---- */
 
 /* Navigation Styles*/
+.navbar__menu {
+    padding:10px;
+}
 .navbar__menu ul {
     padding-left: 0;
     margin: 0;
     text-align: right;
 }
 
-.navbar__menu li {
+.navbar__item {
     display: inline-block;
 }
 
@@ -81,7 +84,17 @@ section {
     text-decoration: none;
     color: #000;
 }
-
+.active {
+    background-color: #222;
+    color: #d8d7ee;
+    position: relative;
+    transition: ease 0.7s all;
+    z-index: 0;
+  }
+  .active-link {
+      border-bottom: 5px solid red;
+      transition: ease 0.7s all;
+  }
 .navbar__menu .menu__link:hover {
     background: #333;
     color: #fff;
