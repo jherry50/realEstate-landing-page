@@ -1,13 +1,21 @@
-# Landing Page Project
+# Real Estate Landing Page Project
 
-## Table of Contents
+This project illustrates a landing page design that makes use of Javascript to populate the navigation bar and also show an active state with css styling when the user is reading a specific section.
 
-* [Instructions](#instructions)
+## Getting Started
 
-## Instructions
+To get started, clone the repository or make a fork.
 
-The starter project has some HTML and CSS styling to display a static version of the Landing Page project. You'll need to convert this project from a static project to an interactive one. This will require modifying the HTML and CSS files, but primarily the JavaScript file.
+For more information on how to clone a repository? Check out [link](https://help.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) from GitHub.
 
-To get started, open `js/app.js` and start building out the app's functionality
+### How to add Navbar Links
 
-For specific, detailed instructions, look at the project instructions in the Udacity Classroom.
+The links in the navbar are automatically populated by Javascript.  You can add a new section with a `data-nav` tag set to the name you want displayed in the link. Illustrated below...
+
+`<section data-nav="passion">`
+
+
+### Active States
+
+The background color changes when a user is in the active section, there are also animations that occur. These animations are input into the css using the `.active` css class as a selector.
+
